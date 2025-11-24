@@ -138,4 +138,16 @@ class BoardTest {
         assertNull(board.getGrid()[middleRow][0]);
         assertEquals(Color.RED, board.getGrid()[1][0]);
     }
+
+    @Test
+    void testClearLines_EmptyBoard() {
+        // El tablero se inicializa vacío en setUp()
+        assertEquals(0, board.clearLines());
+        // Verificamos que el tablero sigue vacío
+        for (int i = 0; i < Board.BOARD_HEIGHT; i++) {
+            for (int j = 0; j < Board.BOARD_WIDTH; j++) {
+                assertNull(board.getGrid()[i][j]);
+            }
+        }
+    }
 }

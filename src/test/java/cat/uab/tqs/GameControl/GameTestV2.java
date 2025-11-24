@@ -25,8 +25,14 @@ class GameTestV2 {
     @Mock
     private Piece currentPiece;
 
-    // @InjectMocks is removed to allow manual instantiation and control over constructor testing.
     private Game game;
+
+    @Test
+    void testConstructorGameNoParemeters() {
+        game = new Game();
+        assertNotNull(game.getBoard());
+        assertNotNull(game.getCurrentPiece());
+    }
 
     private void setupGameForMethodTests() {
         when(pieceFactory.getNewPiece()).thenReturn(currentPiece);

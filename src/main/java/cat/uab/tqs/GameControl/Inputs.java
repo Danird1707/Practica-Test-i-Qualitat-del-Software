@@ -33,6 +33,9 @@ public class Inputs implements KeyListener {
                 // 🔁 Cada vez que se pulsa la barra espaciadora, gira la pieza
                 game.rotatePiece();
                 break;
+
+            default:
+                break;
         }
     }
 

@@ -38,6 +38,13 @@ class GameTestV1 {
     }
 
     @Test
+    void testConstructorGameNoParemeters() {
+        game = new Game();
+        assertNotNull(game.getBoard());
+        assertNotNull(game.getCurrentPiece());
+    }
+
+    @Test
     void testGameInitialization() {
         // This test now verifies the state set up in the @BeforeEach method
         assertNotNull(game.getBoard());

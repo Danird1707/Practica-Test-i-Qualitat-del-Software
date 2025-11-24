@@ -27,6 +27,7 @@ public class Board {
 
     /**
      * Devuelve la rejilla del tablero.
+     *
      * @return La rejilla del tablero.
      */
     public Color[][] getGrid() {
@@ -35,8 +36,9 @@ public class Board {
 
     /**
      * Comprueba si una posición es válida para una pieza.
+     *
      * @param pieceShape La forma de la pieza.
-     * @param position La posición de la pieza.
+     * @param position   La posición de la pieza.
      * @return true si la posición es válida, false en caso contrario.
      */
     public boolean isValidPosition(Point[] pieceShape, Point position) {
@@ -67,9 +69,10 @@ public class Board {
 
     /**
      * Coloca una pieza en el tablero.
+     *
      * @param pieceShape La forma de la pieza.
-     * @param position La posición de la pieza.
-     * @param color El color de la pieza.
+     * @param position   La posición de la pieza.
+     * @param color      El color de la pieza.
      */
     public void placePiece(Point[] pieceShape, Point position, Color color) {
         for (Point p : pieceShape) {
@@ -84,6 +87,7 @@ public class Board {
     /**
      * Elimina las líneas completas del tablero y desplaza las superiores.
      * Esta versión es más robusta y funcional, evitando la manipulación compleja de índices.
+     *
      * @return El número de líneas eliminadas.
      */
     public int clearLines() {
@@ -102,10 +106,10 @@ public class Board {
 
             if (!lineIsFull) {
                 // Si la línea no está llena, la copiamos a la nueva rejilla
-                if (newRow >= 0) {
-                    System.arraycopy(grid[i], 0, newGrid[newRow], 0, BOARD_WIDTH);
-                    newRow--;
-                }
+
+                System.arraycopy(grid[i], 0, newGrid[newRow], 0, BOARD_WIDTH);
+                newRow--;
+
             } else {
                 linesCleared++;
             }
